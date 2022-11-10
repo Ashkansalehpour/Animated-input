@@ -1,0 +1,100 @@
+/*
+ Title: Animated input
+
+  Version:1.0 v
+
+  Developer: Ashkan Salehpour
+
+  Date:11/11/2022
+
+  Description:Eye catching input with animation :). (HTML / CSS)
+
+  Contact me: ashkanspdev@gmail.com
+*/
+
+
+
+/* I prefer to use this font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Rajdhani:wght@300&display=swap');
+
+
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 30px;
+    flex-direction: column;
+    background: #1d2b3a;
+}
+
+
+.inputbox
+{
+    position: relative;
+    width: 250px;
+}
+/* Giving style to our input */
+.inputbox input 
+{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: #1d2b3a;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+    transition: 0.5s;
+}
+/* Giving style to our text which is top of the input(subject) */
+.inputbox span
+{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgba(255,255,255,0.25);
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+/* giving the animation to span when we click on it (focus,valid). */
+.inputbox input:valid ~ span, 
+.inputbox input:focus ~ span
+{
+    color: #00dfc4;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background: #1d2b3a;
+    /* background : it is the same color with body and it will disappear the background of text as big as our padding size */
+    border-left: 1px solid #00dfc4;
+    border-right: 1px solid #00dfc4;
+    letter-spacing: 0.2em;
+}
+
+/* Giving style to text (span) in top of the input when we click on it. (focus) (for second input) */
+.inputbox:nth-child(2) input:valid ~ span, 
+.inputbox:nth-child(2) input:focus ~ span
+{
+    background: #00dfc4;
+    color: #1d2b3a;
+    border-radius: 2px;
+}
+
+/* Giving transition style to our input when we click on it(focus) */
+.inputbox input:valid, 
+.inputbox input:focus
+{
+    border: 1px solid #00dfc4;
+}
